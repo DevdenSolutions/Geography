@@ -29,4 +29,19 @@ public class Mountains : MonoBehaviour
         map.SetZoomLevel(1.4f);
 
     }
+    private void OnDisable()
+    {
+        ResetMountains();
+    }
+
+    public void ResetMountains()
+    {
+        for(int i=0; i< HightlightMountainRivers.Instance.MountainActivated.Length; i++)
+        {
+            HightlightMountainRivers.Instance.MountainActivated[i] = false;
+        }
+        HightlightMountainRivers.Instance.UnHighlight();
+        HightlightMountainRivers.Instance.DisableAllMountainTexts();
+        print("MountainDisabled");
+    }
 }

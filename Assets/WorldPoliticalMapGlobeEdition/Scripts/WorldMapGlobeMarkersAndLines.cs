@@ -403,11 +403,11 @@ namespace WPM
                 fontMaterial = Instantiate<Material>(Resources.Load<Material>("Materials/Font"));
             }
             GameObject go = new GameObject(name);
-            if (SlideInfo.Instance.CurrentSlide != SlideInfo.Slides.Questions)
+            if (SlideInfo.Instance.CurrentSlide == SlideInfo.Slides.AsiaCountries)
             {
                 go.transform.SetParent(GameObject.Find("CountryText").gameObject.transform);
             }
-            else
+            else if(SlideInfo.Instance.CurrentSlide == SlideInfo.Slides.Questions)
             {
                 go.transform.SetParent(GameObject.Find("CountryText2").gameObject.transform);
             }

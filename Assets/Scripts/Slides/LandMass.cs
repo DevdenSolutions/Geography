@@ -23,6 +23,7 @@ public class LandMass : MonoBehaviour
                 if(TextureChanger.Instance.TextureActivated[(int)TextureChanger.EarthTexture.SouthAfrica] == true)
                 {
                     InstantiateTexts.Instance.ActivateContinentName(ContinentName.SouthAfrica);
+                    Debug.LogError(ContinentName.SouthAfrica);
                 }
                 else
                 {
@@ -38,6 +39,7 @@ public class LandMass : MonoBehaviour
                 if (TextureChanger.Instance.TextureActivated[(int)TextureChanger.EarthTexture.SouthAmerica] == true)
                 {
                     InstantiateTexts.Instance.ActivateContinentName(ContinentName.SouthAmerica);
+                    Debug.LogError(ContinentName.SouthAmerica);
                 }
                 else
                 {
@@ -51,6 +53,7 @@ public class LandMass : MonoBehaviour
                 if (TextureChanger.Instance.TextureActivated[(int)TextureChanger.EarthTexture.NorthAmerica] == true)
                 {
                     InstantiateTexts.Instance.ActivateContinentName(ContinentName.NorthAmerica);
+                    Debug.LogError(ContinentName.NorthAmerica);
                 }
                 else
                 {
@@ -64,6 +67,7 @@ public class LandMass : MonoBehaviour
                 if (TextureChanger.Instance.TextureActivated[(int)TextureChanger.EarthTexture.Asia] == true)
                 {
                     InstantiateTexts.Instance.ActivateContinentName(ContinentName.Eurasia);
+                    Debug.LogError(ContinentName.Eurasia);
                 }
                 else
                 {
@@ -77,6 +81,7 @@ public class LandMass : MonoBehaviour
                 if (TextureChanger.Instance.TextureActivated[(int)TextureChanger.EarthTexture.Australia] == true)
                 {
                     InstantiateTexts.Instance.ActivateContinentName(ContinentName.Australia);
+                    Debug.LogError(ContinentName.Australia);
                 }
                 else
                 {
@@ -90,6 +95,7 @@ public class LandMass : MonoBehaviour
                 if (TextureChanger.Instance.TextureActivated[(int)TextureChanger.EarthTexture.Antartica] == true)
                 {
                     InstantiateTexts.Instance.ActivateContinentName(ContinentName.Antarctica);
+                    Debug.LogError(ContinentName.Antarctica);
                 }
                 else
                 {
@@ -103,6 +109,7 @@ public class LandMass : MonoBehaviour
                 if (TextureChanger.Instance.TextureActivated[(int)TextureChanger.EarthTexture.Asia] == true)
                 {
                     InstantiateTexts.Instance.ActivateContinentName(ContinentName.Eurasia);
+                    Debug.LogError(ContinentName.Eurasia);
                 }
                 else
                 {
@@ -116,6 +123,7 @@ public class LandMass : MonoBehaviour
                 if (TextureChanger.Instance.TextureActivated[(int)TextureChanger.EarthTexture.Asia] == true)
                 {
                     InstantiateTexts.Instance.ActivateContinentName(ContinentName.Eurasia);
+                    Debug.LogError(ContinentName.Eurasia);
                 }
                 else
                 {
@@ -181,56 +189,56 @@ public class LandMass : MonoBehaviour
                 //TextureChanger.Instance.ChangeTextureLandMass(TextureChanger.EarthTexture.SouthAfrica);
                 //InstantiateTexts.Instance.ActivateContinentName(ContinentName.SouthAfrica);
                 TextureChanger.Instance.HighLightTexture(TextureChanger.EarthTexture.SouthAfrica);
-                Debug.LogError("Africa");
+               
                 break;
 
             case "South America":
                 //TextureChanger.Instance.ChangeTextureLandMass(TextureChanger.EarthTexture.SouthAmerica);
                 //InstantiateTexts.Instance.ActivateContinentName(ContinentName.SouthAmerica);
                 TextureChanger.Instance.HighLightTexture(TextureChanger.EarthTexture.SouthAmerica);
-                Debug.LogError("South America");
+               
                 break;
 
             case "North America":
                 //TextureChanger.Instance.ChangeTextureLandMass(TextureChanger.EarthTexture.NorthAmerica);
                 //InstantiateTexts.Instance.ActivateContinentName(ContinentName.NorthAmerica);
                 TextureChanger.Instance.HighLightTexture(TextureChanger.EarthTexture.NorthAmerica);
-                Debug.LogError("North America");
+               
                 break;
 
             case "Asia":
                 //TextureChanger.Instance.ChangeTextureLandMass(TextureChanger.EarthTexture.Asia);
                 //InstantiateTexts.Instance.ActivateContinentName(ContinentName.Eurasia);
                 TextureChanger.Instance.HighLightTexture(TextureChanger.EarthTexture.Asia);
-                Debug.LogError("Eurasia");
+               
                 break;
 
             case "Oceania":
                 //TextureChanger.Instance.ChangeTextureLandMass(TextureChanger.EarthTexture.Australia);
                 //InstantiateTexts.Instance.ActivateContinentName(ContinentName.Australia);
                 TextureChanger.Instance.HighLightTexture(TextureChanger.EarthTexture.Australia);
-                Debug.LogError("Australia");
+               
                 break;
 
             case "Antarctica":
                 //TextureChanger.Instance.ChangeTextureLandMass(TextureChanger.EarthTexture.Antartica);
                 //InstantiateTexts.Instance.ActivateContinentName(ContinentName.Antarctica);
                 TextureChanger.Instance.HighLightTexture(TextureChanger.EarthTexture.Antartica);
-                Debug.LogError("Antarctica");
+               
                 break;
 
             case "Eurasia":
                 //TextureChanger.Instance.ChangeTextureLandMass(TextureChanger.EarthTexture.Asia);
                 //InstantiateTexts.Instance.ActivateContinentName(ContinentName.Eurasia);
                 TextureChanger.Instance.HighLightTexture(TextureChanger.EarthTexture.Asia);
-                Debug.LogError("Eurasia");
+                
                 break;
 
             case "Europe":
                 //TextureChanger.Instance.ChangeTextureLandMass(TextureChanger.EarthTexture.Asia);
                 //InstantiateTexts.Instance.ActivateContinentName(ContinentName.Eurasia);
                 TextureChanger.Instance.HighLightTexture(TextureChanger.EarthTexture.Asia);
-                Debug.LogError("Eurasia");
+               
                 break;
         }
     }
@@ -244,6 +252,7 @@ public class LandMass : MonoBehaviour
     {
 
         map.OnCountryClick -= ShowLandMass;
+        ResetLandMass();
     }
 
     public void EnableLandMassObjects()
@@ -255,4 +264,17 @@ public class LandMass : MonoBehaviour
         map.enableCountryHighlight = false;
         map.showProvinces = false;
     }
+
+    public void ResetLandMass()
+    {
+        for(int i =0; i < TextureChanger.Instance.TextureActivated.Length; i++)
+        {
+            TextureChanger.Instance.TextureActivated[i] = false;
+        }
+        TextureChanger.Instance.ChangeTextureAlphaToZero();
+        FindMarkerAndTurnOn.Instance.TurnAllTextOFF();
+        Debug.LogError("Called Reset Land Mass");
+    }
+
+    
 }

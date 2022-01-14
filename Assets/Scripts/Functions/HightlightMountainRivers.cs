@@ -281,6 +281,14 @@ public class HightlightMountainRivers : MonoBehaviour
         }
     }
 
+    public void DisableAllMountainTexts()
+    {
+        for(int i = 0; i< MountainTexts.Length; i++)
+        {
+            MountainTexts[i].SetActive(false);
+        }
+    }
+
     public void EnableRiverText(RiverNames riverNames)
     {
         if (RiversActivated[(int)riverNames] == false)
@@ -292,6 +300,14 @@ public class HightlightMountainRivers : MonoBehaviour
         {
             RiversActivated[(int)riverNames] = false;
             RiverTexts[(int)riverNames].SetActive(false);
+        }
+    }
+
+    public void DisableRiverTexts()
+    {
+        for(int i =0; i< RiverTexts.Length; i++)
+        {
+            RiverTexts[i].SetActive(false);
         }
     }
 }

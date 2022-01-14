@@ -109,12 +109,14 @@ public class DragActiveSphere : MonoBehaviour
     void Successful()
     {
         transform.GetComponentInParent<OnSuccessful>().AfterSuccesful();
-        
+        transform.localPosition = InitialPosition;
+
     }
 
     void HighlightCountry(int CountryIndex)
     {
         map.ToggleCountrySurface(CountryIndex, true, new Color32(255, 0, 0, 139));
         map.AddText(map.countries[CountryIndex].name, map.countries[CountryIndex].localPosition, Color.white, 0.017f);
+        Questions.Instance.ActivatedCountriesIndex.Add(CountryIndex);
     }
 }

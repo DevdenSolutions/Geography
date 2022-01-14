@@ -39,6 +39,7 @@ public class Asia : MonoBehaviour
         map.showProvinces = false;
         map.showCountryNames = false;
         map.allowUserZoom = true;
+        
     }
 
     public void DisableObjectsAsia()
@@ -129,6 +130,8 @@ public class Asia : MonoBehaviour
         map.showFrontiers = true;
 
         map.enableCountryHighlight = true;
+        map.earthStyle = EARTH_STYLE.Natural;
+        CountryTextParent.SetActive(true);
 
     }
 
@@ -136,5 +139,12 @@ public class Asia : MonoBehaviour
     {
         map.enableCountryHighlight = false;
         map.OnCountryPointerDown -= PinCountries;
-    } 
+        ResetAsiaCountries();
+    }
+
+    public void ResetAsiaCountries()
+    {
+        FindMarkerAndTurnOn.Instance.TurnAllBuildingCloneOFF();
+        FindMarkerAndTurnOn.Instance.TurnAllCountryTextOFF();
+    }
 }
