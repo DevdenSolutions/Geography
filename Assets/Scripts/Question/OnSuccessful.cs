@@ -29,6 +29,6 @@ public class OnSuccessful : MonoBehaviour
     {
         transform.GetChild(3).GetChild(0).GetComponent<Image>().colorTransition(Color.red, .5f);
         transform.JoinTransition();
-        transform.GetChild(3).GetChild(0).GetComponent<Image>().colorTransition(new Color32(0,118,255,255), 1f);
+        transform.GetChild(3).GetChild(0).GetComponent<Image>().colorTransition(new Color32(67,67,67,255), 1f);
     }
 }

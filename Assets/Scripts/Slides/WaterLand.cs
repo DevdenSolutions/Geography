@@ -10,6 +10,8 @@ public class WaterLand : MonoBehaviour
     public TMP_Text WaterLandtext;
     WorldMapGlobe map;
     public GameObject WaterLandUI;
+    [SerializeField]
+    GameObject WaterLandUIBox;
 
 
     private void Awake()
@@ -82,6 +84,10 @@ public class WaterLand : MonoBehaviour
                 {
                     if (map.countryHighlighted != null || map.cityHighlighted != null || map.provinceHighlighted != null)
                     {
+                        if (WaterLandUIBox.activeSelf == false)
+                        {
+                            WaterLandUIBox.SetActive(true);
+                        }
                         WaterLandtext.text = "Land";
                         x = GUIResizer.authoredScreenWidth * (mousePos.x / Screen.width);
                         y = GUIResizer.authoredScreenHeight - (GUIResizer.authoredScreenHeight * (mousePos.y / Screen.height)) - 20 * (Input.touchSupported ? 3 : 1); // slightly up for touch devices
@@ -91,6 +97,10 @@ public class WaterLand : MonoBehaviour
                     else
                     {
                         Debug.LogError("Water");
+                        if (WaterLandUIBox.activeSelf == false)
+                        {
+                            WaterLandUIBox.SetActive(true);
+                        }
                         WaterLandtext.text = "Water";
                         TextureChanger.Instance.ChangeTexture(TextureChanger.EarthTexture.Earth_Water);
                     }
@@ -99,6 +109,7 @@ public class WaterLand : MonoBehaviour
                 else
                 {
                     WaterLandtext.text = "Nothing";
+                   
 
                 }
 
@@ -116,6 +127,10 @@ public class WaterLand : MonoBehaviour
         if (!map.mouseIsOver)
         {
             WaterLandtext.text = "Nothing";
+            if (WaterLandUIBox.activeSelf)
+            {
+                WaterLandUIBox.SetActive(false);
+            }
             TextureChanger.Instance.ChangeTexture(TextureChanger.EarthTexture.Earth);
         }
     }

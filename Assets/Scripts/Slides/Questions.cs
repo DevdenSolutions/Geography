@@ -65,7 +65,7 @@ public class Questions : MonoBehaviour
             {
                 AllQuestions[i].SetActive(true);
                 AllQuestions[i].transform.GetChild(0).gameObject.SetActive(true);
-                AllQuestions[i].transform.GetChild(1).gameObject.SetActive(true);
+               // AllQuestions[i].transform.GetChild(1).gameObject.SetActive(true);
                 AllQuestions[i].transform.GetChild(2).gameObject.SetActive(true);
                 AllQuestions[i].transform.GetChild(3).gameObject.GetComponent<CanvasGroup>().alpha = 1;
             }
