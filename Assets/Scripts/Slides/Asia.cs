@@ -101,7 +101,7 @@ public class Asia : MonoBehaviour
             GameObject MyPin = Instantiate(Resources.Load<GameObject>("Building/Building"));
             map.AddMarker(MyPin, sphereLocation, 0.02f);
             sphereLocation = new Vector3(sphereLocation.x, sphereLocation.y, sphereLocation.z);
-            map.AddText(country.name, sphereLocation, Color.red, 0.01f);
+            map.AddText(country.name, sphereLocation, new Color(0.99f,1,0,1), 0.01f);
             Debug.LogError(map.countries[countryIndex].continent);
 
             MyPin.transform.GetChild(0).transform.localPositionTransition(Vector3.zero, .5f, LeanEase.Back);
