@@ -611,6 +611,7 @@ PlayerSettings:
   scriptingBackend: {}
   il2cppCompilerConfiguration: {}
   managedStrippingLevel:
+    Android: 2
     WebGL: 3
   incrementalIl2cppBuild: {}
   suppressCommonWarnings: 1
