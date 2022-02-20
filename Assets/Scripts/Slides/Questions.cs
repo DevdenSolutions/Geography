@@ -61,17 +61,17 @@ public class Questions : MonoBehaviour
 
         for (int i = 0; i < AllQuestions.Length; i++)
         {
-            if (AllQuestions[i].activeSelf == false)
-            {
-                AllQuestions[i].SetActive(true);
-                AllQuestions[i].transform.GetChild(0).gameObject.SetActive(true);
-               // AllQuestions[i].transform.GetChild(1).gameObject.SetActive(true);
-                AllQuestions[i].transform.GetChild(2).gameObject.SetActive(true);
-                AllQuestions[i].transform.GetChild(3).gameObject.GetComponent<CanvasGroup>().alpha = 1;
+                if (AllQuestions[i].activeSelf == false)
+                {
+                    AllQuestions[i].SetActive(true);
+                    AllQuestions[i].transform.GetChild(0).gameObject.SetActive(true);
+                    // AllQuestions[i].transform.GetChild(1).gameObject.SetActive(true);
+                    AllQuestions[i].transform.GetChild(2).gameObject.SetActive(true);
+                    AllQuestions[i].transform.GetChild(3).gameObject.GetComponent<CanvasGroup>().alpha = 1;
+                }
             }
 
-
-        }
+        
 
         for (int i = 0; i < ActivatedCountriesIndex.Count; i++)
         {

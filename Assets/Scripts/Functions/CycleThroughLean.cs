@@ -14,19 +14,22 @@ public class CycleThroughLean : MonoBehaviour
     public Transform listParent;
     public LeanGameObjectSetActive leanGameObjectSetActiveTransition;
     public List<string> title;
+    public List<AudioClip> audioClips;
+    public AudioSource audioSource;
     private void Start()
     {
         SlideCount = Slides.Length;
         Slides[0].TurnOn();
 
-        for (int i = 0; i < Slides.Length; i++)
+        for (int i = 0; i < 6; i++)
         {
             int k = i;
             listParent.GetChild(k).GetComponent<Button>().onClick.AddListener(() => { TurnSlideOn(k); print(123); });
             listParent.GetChild(k).GetChild(0).GetComponent<TextMeshProUGUI>().text = (k + 1) + ". " + title[k];
         }
         ChangeListBgColor();
-
+        audioSource.clip = audioClips[0];
+        audioSource.Play();
     }
 
     public void GoForward()
@@ -56,23 +59,40 @@ public class CycleThroughLean : MonoBehaviour
         Slides[index].TurnOn();
         ChangeListBgColor();
         leanGameObjectSetActiveTransition.BeginAllTransitions();
+        try
+        {
+            if (audioClips[index])
+            {
+                audioSource.clip = audioClips[index];
+                audioSource.Play();
+            }
+        }
+        catch{ }
     }
 
 
     public void ChangeListBgColor()
     {
-        for (int i = 0; i < Slides.Length; i++)
+        for (int i = 0; i < 6; i++)
         {
             listParent.GetChild(i).GetChild(0).GetComponent<LeanGraphicColor>().BeginThisTransition();
         }
-        listParent.GetChild(currentSlide).GetComponent<LeanGraphicColor>().BeginThisTransition();
-        print(000);
+        try
+        {
+            listParent.GetChild(currentSlide).GetComponent<LeanGraphicColor>().BeginThisTransition();
+            print(000);
+        }
+        catch { }
     }
 
     public void ChangeCurrentBgColor()
     {
-        listParent.GetChild(currentSlide).GetComponent<LeanGraphicColor>().BeginThisTransition();
-        print(000);
+        try
+        {
+            listParent.GetChild(currentSlide).GetComponent<LeanGraphicColor>().BeginThisTransition();
+            print(000);
+        }
+        catch { }
     }
 
 
